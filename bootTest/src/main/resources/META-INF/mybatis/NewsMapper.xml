@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.g2link.dao.mappers.NewsMapper">
+
+	<resultMap id="newsMap" type="cn.g2link.entity.News">
+		<id property="newsId" column="news_id"/>
+		<result property="newsTitle" column="news_title"/>
+		<result property="newsType" column="news_type"/>
+		<result property="publishTime" column="publish_time"/>
+		<result property="viewNum" column="view_num"/>
+	</resultMap>
+	
+
+	<select id="findAllNews" resultMap="newsMap" >
+		SELECT `news_id`,`news_title`,`publish_time`,`view_num`,`news_type` 
+		FROM `g2monitor_news`
+	</select>
+</mapper>
